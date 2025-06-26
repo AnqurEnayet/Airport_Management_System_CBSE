@@ -1,0 +1,205 @@
+package st.cbse.logisticscenter.client;
+
+import st.cbse.logisticscenter.flightmgmt.client.FlightManagementClientManager;
+import st.cbse.logisticscenter.flightmgmt.server.data.Airline;
+import st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote;
+import st.cbse.logisticscenter.passengermgmt.client.PassengerManagementClientManager; // Keep this import
+import st.cbse.logisticscenter.passengermgmt.server.data.Passenger; // Keep this import
+import st.cbse.logisticscenter.passengermgmt.server.interfaces.IPassengerManagementRemote; // Keep this import
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import java.util.Hashtable;
+import java.util.Scanner;
+
+/**
+ * Main client application for the Logistics Center system.
+ * This class now acts as the top-level 'Controller' for role selection,
+ * responsible for setting up JNDI context, looking up remote EJB interfaces,
+ * and delegating to component-specific client-side manager classes based on user role.
+ */
+public class Client {
+
+    // --- JNDI Lookup Names for Server-Side EJBs ---
+    private static final String APP_NAME = "";
+    private static final String MODULE_NAME = "st.cbse.LogisticsCenter.server"; // This is the name of your server JAR/WAR
+
+    // JNDI for FlightManagementBean
+    private static final String BEAN_NAME_FLIGHT_MGMT = "FlightManagementBean";
+    private static final String INTERFACE_FLIGHT_MGMT = IFlightManagementRemote.class.getName();
+    private static final String JNDI_FLIGHT_MGMT = "ejb:" + APP_NAME + "/" + MODULE_NAME + "/" + BEAN_NAME_FLIGHT_MGMT + "!" + INTERFACE_FLIGHT_MGMT;
+
+    // JNDI for PassengerManagementBean
+    private static final String BEAN_NAME_PASSENGER_MGMT = "PassengerManagementBean";
+    private static final String INTERFACE_PASSENGER_MGMT = IPassengerManagementRemote.class.getName();
+    private static final String JNDI_PASSENGER_MGMT = "ejb:" + APP_NAME + "/" + MODULE_NAME + "/" + BEAN_NAME_PASSENGER_MGMT + "!" + INTERFACE_PASSENGER_MGMT;
+
+    // --- Client-side Managers ---
+    private static FlightManagementClientManager flightManagementClientManager;
+    private static PassengerManagementClientManager passengerManagementClientManager;
+
+    private static Scanner scanner = new Scanner(System.in);
+    private static Airline currentAirline = null;
+    private static Passenger currentPassenger = null;
+
+
+    public static void main(String[] args) {
+        System.out.println("### Logistics Center Client: Initiating Connection and Scenarios ###");
+
+        try {
+            final Context initialContext = getInitialContext();
+
+            // 1. Setup Flight Management EJB and Manager
+            IFlightManagementRemote flightManagementRemote = lookupRemoteEJB(initialContext, JNDI_FLIGHT_MGMT, IFlightManagementRemote.class);
+            flightManagementClientManager = new FlightManagementClientManager(flightManagementRemote, scanner);
+            System.out.println("Flight Management EJB connected successfully.");
+
+            // 2. Setup Passenger Management EJB and Manager
+            IPassengerManagementRemote passengerManagementRemote = lookupRemoteEJB(initialContext, JNDI_PASSENGER_MGMT, IPassengerManagementRemote.class);
+            // Note: PassengerManagementClientManager now needs FlightManagementClientManager to view flights
+            passengerManagementClientManager = new PassengerManagementClientManager(passengerManagementRemote, flightManagementClientManager, scanner);
+            System.out.println("Passenger Management EJB connected successfully.");
+
+
+            // --- Main Menu Loop ---
+            while (true) {
+                System.out.println("\n--- Logistics Center Main Menu ---");
+                System.out.println("1. Enter as Airline");
+                System.out.println("2. Enter as Passenger");
+                System.out.println("3. Enter as Administrator");
+                System.out.println("4. Exit");
+                System.out.print("Select your role (1-4): ");
+
+                String choice = scanner.nextLine();
+
+                switch (choice) {
+                    case "1":
+                        handleAirlineRole();
+                        break;
+                    case "2":
+                        handlePassengerRole();
+                        break;
+                    case "3":
+                        System.out.println("Administrator role selected. (Under Development)");
+                        // TODO: Implement handleAdministratorRole();
+                        break;
+                    case "4":
+                        System.out.println("Exiting Logistics Center Client. Goodbye!");
+                        scanner.close();
+                        return;
+                    default:
+                        System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+                }
+            }
+
+        } catch (NamingException e) {
+            System.err.println("\n--- JNDI Naming Error: Could not connect to EJBs ---");
+            System.err.println("Please ensure WildFly is running, EJBs are deployed, and JNDI names are correct.");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.err.println("\n--- An unexpected error occurred during client execution ---");
+            e.printStackTrace();
+        } finally {
+            System.out.println("\n### Logistics Center Client: Execution Finished ###");
+        }
+    }
+
+    private static void handleAirlineRole() {
+        System.out.println("\n--- Airline Role Access ---");
+        currentAirline = null; // Changed from loggedInAirline
+
+        while (currentAirline == null) { // Changed from loggedInAirline
+            System.out.print("Enter your Airline IATA Code (e.g., LH, AA) or type 'register' to create a new one: ");
+            String input = scanner.nextLine().trim();
+
+            if (input.equalsIgnoreCase("register")) {
+                System.out.print("Enter new Airline Name: ");
+                String name = scanner.nextLine();
+                System.out.print("Enter new Airline IATA Code: ");
+                String iata = scanner.nextLine();
+                System.out.print("Enter new Airline Contact Email: ");
+                String email = scanner.nextLine();
+
+                Airline newAirline = flightManagementClientManager.registerAirline(name, iata, email);
+                if (newAirline != null) {
+                    System.out.println("Airline registered successfully: " + newAirline.getName());
+                    currentAirline = newAirline; // Changed from loggedInAirline
+                } else {
+                    System.out.println("Failed to register airline. It might already exist or there was an error.");
+                }
+            } else {
+                Airline foundAirline = flightManagementClientManager.getAirlineByIataCode(input.toUpperCase());
+                if (foundAirline != null) {
+                    System.out.println("Logged in as Airline: " + foundAirline.getName());
+                    currentAirline = foundAirline; // Changed from loggedInAirline
+                } else {
+                    System.out.println("Airline with IATA Code '" + input + "' not found.");
+                }
+            }
+        }
+
+        flightManagementClientManager.startAirlineOperationsMenu(currentAirline); // Changed from loggedInAirline
+    }
+
+
+    // UPDATED handlePassengerRole method (already correct from your last paste)
+    private static void handlePassengerRole() {
+        System.out.println("\n--- Passenger Role Access ---");
+        currentPassenger = null; // Reset current passenger on entering this menu
+
+        while (currentPassenger == null) {
+            System.out.println("1. Login");
+            System.out.println("2. Register");
+            System.out.println("3. Back to Main Menu");
+            System.out.print("Select an option (1-3): ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    System.out.print("Enter Username: ");
+                    String username = scanner.nextLine();
+                    System.out.print("Enter Password: ");
+                    String password = scanner.nextLine();
+                    currentPassenger = passengerManagementClientManager.loginPassenger(username, password);
+                    break;
+                case "2":
+                    System.out.print("Enter new Username: ");
+                    String regUsername = scanner.nextLine();
+                    System.out.print("Enter new Password: ");
+                    String regPassword = scanner.nextLine();
+                    System.out.print("Enter First Name: ");
+                    String regFirstName = scanner.nextLine();
+                    System.out.print("Enter Last Name: ");
+                    String regLastName = scanner.nextLine();
+                    System.out.print("Enter Email: ");
+                    String regEmail = scanner.nextLine();
+                    currentPassenger = passengerManagementClientManager.registerPassenger(regUsername, regPassword, regFirstName, regLastName, regEmail);
+                    break;
+                case "3":
+                    return; // Go back to main menu
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+
+        // If a passenger successfully logged in or registered, start their operations menu
+        if (currentPassenger != null) {
+            passengerManagementClientManager.startPassengerOperationsMenu(currentPassenger);
+        }
+    }
+
+
+    private static Context getInitialContext() throws NamingException {
+        Hashtable<String, String> jndiProperties = new Hashtable<>();
+        jndiProperties.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
+        jndiProperties.put(Context.PROVIDER_URL, "http-remoting://localhost:8080");
+        return new InitialContext(jndiProperties);
+    }
+
+    @SuppressWarnings("unchecked")
+    private static <T> T lookupRemoteEJB(Context context, String jndiName, Class<T> remoteInterfaceClass) throws NamingException {
+        System.out.println("[Lookup] Looking up " + remoteInterfaceClass.getSimpleName() + " with JNDI name: " + jndiName);
+        return (T) context.lookup(jndiName);
+    }
+}

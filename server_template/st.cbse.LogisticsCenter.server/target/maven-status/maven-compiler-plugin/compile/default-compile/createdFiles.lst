@@ -1,0 +1,10 @@
+st\cbse\logisticscenter\flightmgmt\server\start\beans\FlightManagementBean.class
+st\cbse\logisticscenter\crm\server\start\interfaces\StartAppRemote.class
+st\cbse\logisticscenter\passengermgmt\server\start\beans\PassengerManagementBean.class
+st\cbse\logisticscenter\flightmgmt\server\interfaces\IFlightManagementRemote.class
+st\cbse\logisticscenter\crm\server\start\data\LogMessage.class
+st\cbse\logisticscenter\flightmgmt\server\data\Airline.class
+st\cbse\logisticscenter\flightmgmt\server\data\Flight.class
+st\cbse\logisticscenter\crm\server\start\beans\StartAppBean.class
+st\cbse\logisticscenter\passengermgmt\server\interfaces\IPassengerManagementRemote.class
+st\cbse\logisticscenter\passengermgmt\server\data\Passenger.class
