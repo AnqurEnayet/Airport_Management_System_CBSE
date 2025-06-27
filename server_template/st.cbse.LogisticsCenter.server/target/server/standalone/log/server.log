@@ -1,8 +1,8 @@
-2025-06-26 05:02:31,805 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.2.Final
-2025-06-26 05:02:32,593 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.2.Final
-2025-06-26 05:02:32,603 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
-2025-06-26 05:02:32,733 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 30.0.1.Final (WildFly Core 22.0.2.Final) starting
-2025-06-26 05:02:32,735 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+2025-06-27 08:31:34,667 INFO  [org.jboss.modules] (main) JBoss Modules version 2.1.2.Final
+2025-06-27 08:31:35,479 INFO  [org.jboss.msc] (main) JBoss MSC version 1.5.2.Final
+2025-06-27 08:31:35,490 INFO  [org.jboss.threads] (main) JBoss Threads version 2.4.0.Final
+2025-06-27 08:31:35,626 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 30.0.1.Final (WildFly Core 22.0.2.Final) starting
+2025-06-27 08:31:35,628 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
 	[Standalone] = 
 	file.encoding = UTF-8
 	file.separator = \
@@ -79,176 +79,226 @@
 	user.script = 
 	user.timezone = Europe/Berlin
 	user.variant = 
-2025-06-26 05:02:32,738 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-modules=java.se --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-modules=java.se -Djava.security.manager=allow -Djboss.home.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server -Djboss.server.base.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone -Djboss.server.log.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\log -Djboss.server.config.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration -Dorg.jboss.boot.log.file=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\log\server.log -Dlogging.configuration=file:D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration\logging.properties 
-2025-06-26 05:02:33,695 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 2.2.2.Final
-2025-06-26 05:02:34,689 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 24) WFLYCTL0028: Attribute 'cluster' in the resource at address '/subsystem=ejb3/service=remote' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
-2025-06-26 05:02:34,758 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
-2025-06-26 05:02:34,787 INFO  [org.xnio] (MSC service thread 1-3) XNIO version 3.8.11.Final
-2025-06-26 05:02:34,799 INFO  [org.xnio.nio] (MSC service thread 1-3) XNIO NIO Implementation Version 3.8.11.Final
-2025-06-26 05:02:34,835 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 60) WFLYRS0016: RESTEasy version 6.2.6.Final
-2025-06-26 05:02:34,844 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 55) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
-2025-06-26 05:02:34,851 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 58) WFLYCLINF0001: Activating Infinispan subsystem.
-2025-06-26 05:02:34,852 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 56) WFLYHEALTH0001: Activating Base Health Subsystem
-2025-06-26 05:02:34,861 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 78) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
-2025-06-26 05:02:34,863 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 70) WFLYJWT0001: Activating MicroProfile JWT Subsystem
-2025-06-26 05:02:34,866 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 69) WFLYCONF0001: Activating MicroProfile Config Subsystem
-2025-06-26 05:02:34,900 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 71) WFLYNAM0001: Activating Naming Subsystem
-2025-06-26 05:02:34,901 INFO  [org.wildfly.iiop.openjdk] (ServerService Thread Pool -- 57) WFLYIIOP0001: Activating IIOP Subsystem
-2025-06-26 05:02:34,901 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 65) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
-2025-06-26 05:02:34,924 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 59) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
-2025-06-26 05:02:34,933 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 68) WFLYMETRICS0001: Activating Base Metrics Subsystem
-2025-06-26 05:02:35,001 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 80) WFLYWS0002: Activating WebServices Extension
-2025-06-26 05:02:35,061 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.4.Final)
-2025-06-26 05:02:35,072 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 46) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
-2025-06-26 05:02:35,077 INFO  [org.jboss.as.naming] (MSC service thread 1-4) WFLYNAM0003: Starting Naming Service
-2025-06-26 05:02:35,096 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0003: Undertow 2.3.10.Final starting
-2025-06-26 05:02:35,151 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
-2025-06-26 05:02:35,158 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-8) WFLYJCA0018: Started Driver service with driver-name = h2
-2025-06-26 05:02:35,221 INFO  [org.jboss.remoting] (MSC service thread 1-8) JBoss Remoting version 5.0.27.Final
-2025-06-26 05:02:35,226 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-4) WFLYELY00023: KeyStore file 'D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration\application.keystore' does not exist. Used blank.
-2025-06-26 05:02:35,324 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0014: Creating file handler for path 'D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
-2025-06-26 05:02:35,329 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
-2025-06-26 05:02:35,329 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
-2025-06-26 05:02:35,345 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-4) WFLYELY01084: KeyStore D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration\application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
-2025-06-26 05:02:35,491 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0012: Started server default-server.
-2025-06-26 05:02:35,494 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) Queuing requests.
-2025-06-26 05:02:35,501 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0018: Host default-host starting
-2025-06-26 05:02:35,712 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
-2025-06-26 05:02:35,933 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
-2025-06-26 05:02:35,970 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\deployments
-2025-06-26 05:02:36,046 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-4) WFLYMSGAMQ0001: AIO wasn't located on this platform, it will fall back to using pure Java NIO.
-2025-06-26 05:02:36,098 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
-2025-06-26 05:02:36,230 INFO  [org.jboss.ws.common.management] (MSC service thread 1-6) JBWS022052: Starting JBossWS 7.0.0.Final (Apache CXF 4.0.0) 
-2025-06-26 05:02:36,315 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-8) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
-2025-06-26 05:02:36,362 INFO  [org.wildfly.iiop.openjdk] (MSC service thread 1-1) WFLYIIOP0009: CORBA ORB Service started
-2025-06-26 05:02:36,376 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221000: live Message Broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\journal,bindingsDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\bindings,largeMessagesDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\largemessages,pagingDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\paging)
-2025-06-26 05:02:36,432 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221013: Using NIO Journal
-2025-06-26 05:02:36,588 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE
-2025-06-26 05:02:36,590 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-amqp-protocol]. Adding protocol support for: AMQP
-2025-06-26 05:02:36,591 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-hornetq-protocol]. Adding protocol support for: HORNETQ
-2025-06-26 05:02:36,592 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-stomp-protocol]. Adding protocol support for: STOMP
-2025-06-26 05:02:36,693 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221034: Waiting indefinitely to obtain live lock
-2025-06-26 05:02:36,693 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221035: Live Server Obtained live lock
-2025-06-26 05:02:36,894 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.ExpiryQueue on address jms.queue.ExpiryQueue
-2025-06-26 05:02:36,975 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.DLQ on address jms.queue.DLQ
-2025-06-26 05:02:37,015 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-5) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
-2025-06-26 05:02:37,015 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-1) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
-2025-06-26 05:02:37,015 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
-2025-06-26 05:02:37,015 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
-2025-06-26 05:02:37,293 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221007: Server is now live
-2025-06-26 05:02:37,294 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221001: Apache ActiveMQ Artemis Message Broker version 2.31.2 [default, nodeID=032a74c8-523a-11f0-9829-00155df6cbbb] 
-2025-06-26 05:02:37,304 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 82) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
-2025-06-26 05:02:37,318 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 83) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
-2025-06-26 05:02:37,362 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-7) WFLYJCA0007: Registered connection factory java:/JmsXA
-2025-06-26 05:02:37,408 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (MSC service thread 1-7) AMQ151007: Resource adaptor started
-2025-06-26 05:02:37,408 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-7) IJ020002: Deployed: file://RaActivatoractivemq-ra
-2025-06-26 05:02:37,411 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-7) WFLYJCA0002: Bound Jakarta Connectors ConnectionFactory [java:/JmsXA]
-2025-06-26 05:02:37,411 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) WFLYJCA0118: Binding connection factory named java:/JmsXA to alias java:jboss/DefaultJMSConnectionFactory
-2025-06-26 05:02:37,596 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
-2025-06-26 05:02:37,603 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
-2025-06-26 05:02:37,603 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
-2025-06-26 05:02:37,605 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 30.0.1.Final (WildFly Core 22.0.2.Final) started in 6251ms - Started 318 of 560 services (332 services are lazy, passive or on-demand) - Server configuration file in use: standalone-full.xml
-2025-06-26 05:02:37,800 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "st.cbse.LogisticsCenter.server.war" (runtime-name: "st.cbse.LogisticsCenter.server.war")
-2025-06-26 05:02:38,230 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) WFLYJPA0002: Read persistence.xml for JPAUnit
-2025-06-26 05:02:38,324 INFO  [org.jipijapa] (MSC service thread 1-6) JIPIORMV6020260: Second level cache enabled for st.cbse.LogisticsCenter.server#JPAUnit
-2025-06-26 05:02:38,678 INFO  [org.jboss.weld.deployer] (MSC service thread 1-7) WFLYWELD0003: Processing weld deployment st.cbse.LogisticsCenter.server.war
-2025-06-26 05:02:38,827 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-7) HV000001: Hibernate Validator 8.0.1.Final
-2025-06-26 05:02:39,012 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'StartAppBean' in deployment unit 'deployment "st.cbse.LogisticsCenter.server.war"' are as follows:
+2025-06-27 08:31:35,635 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -D[Standalone] -Xms64m -Xmx512m -Djava.net.preferIPv4Stack=true -Djava.awt.headless=true -Djboss.modules.system.pkgs=org.jboss.byteman --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-modules=java.se --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldap=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.url.ldaps=ALL-UNNAMED --add-exports=jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-modules=java.se -Djava.security.manager=allow -Djboss.home.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server -Djboss.server.base.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone -Djboss.server.log.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\log -Djboss.server.config.dir=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration -Dorg.jboss.boot.log.file=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\log\server.log -Dlogging.configuration=file:D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration\logging.properties 
+2025-06-27 08:31:36,663 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 2.2.2.Final
+2025-06-27 08:31:37,654 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 24) WFLYCTL0028: Attribute 'cluster' in the resource at address '/subsystem=ejb3/service=remote' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2025-06-27 08:31:37,726 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2025-06-27 08:31:37,758 INFO  [org.xnio] (MSC service thread 1-5) XNIO version 3.8.11.Final
+2025-06-27 08:31:37,769 INFO  [org.xnio.nio] (MSC service thread 1-5) XNIO NIO Implementation Version 3.8.11.Final
+2025-06-27 08:31:37,809 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 60) WFLYRS0016: RESTEasy version 6.2.6.Final
+2025-06-27 08:31:37,818 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 55) WFLYOIDC0001: Activating WildFly Elytron OIDC Subsystem
+2025-06-27 08:31:37,824 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 58) WFLYCLINF0001: Activating Infinispan subsystem.
+2025-06-27 08:31:37,826 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 56) WFLYHEALTH0001: Activating Base Health Subsystem
+2025-06-27 08:31:37,835 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 78) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2025-06-27 08:31:37,837 INFO  [org.wildfly.extension.microprofile.jwt.smallrye] (ServerService Thread Pool -- 70) WFLYJWT0001: Activating MicroProfile JWT Subsystem
+2025-06-27 08:31:37,840 INFO  [org.wildfly.extension.microprofile.config.smallrye] (ServerService Thread Pool -- 69) WFLYCONF0001: Activating MicroProfile Config Subsystem
+2025-06-27 08:31:37,847 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 65) WFLYJSF0007: Activated the following Jakarta Server Faces Implementations: [main]
+2025-06-27 08:31:37,893 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 71) WFLYNAM0001: Activating Naming Subsystem
+2025-06-27 08:31:37,894 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 80) WFLYWS0002: Activating WebServices Extension
+2025-06-27 08:31:37,894 INFO  [org.wildfly.iiop.openjdk] (ServerService Thread Pool -- 57) WFLYIIOP0001: Activating IIOP Subsystem
+2025-06-27 08:31:37,897 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 59) WFLYIO001: Worker 'default' has auto-configured to 24 IO threads with 192 max task threads based on your 12 available processors
+2025-06-27 08:31:37,916 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 68) WFLYMETRICS0001: Activating Base Metrics Subsystem
+2025-06-27 08:31:38,075 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0003: Undertow 2.3.10.Final starting
+2025-06-27 08:31:38,074 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 46) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 2.2)
+2025-06-27 08:31:38,108 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting Jakarta Connectors Subsystem (WildFly/IronJacamar 3.0.4.Final)
+2025-06-27 08:31:38,126 INFO  [org.jboss.remoting] (MSC service thread 1-5) JBoss Remoting version 5.0.27.Final
+2025-06-27 08:31:38,198 INFO  [org.jboss.as.naming] (MSC service thread 1-4) WFLYNAM0003: Starting Naming Service
+2025-06-27 08:31:38,201 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = h2
+2025-06-27 08:31:38,222 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-1) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2025-06-27 08:31:38,247 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-8) WFLYELY00023: KeyStore file 'D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration\application.keystore' does not exist. Used blank.
+2025-06-27 08:31:38,324 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 79) WFLYUT0014: Creating file handler for path 'D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2025-06-27 08:31:38,394 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 192 (per class), which is derived from thread worker pool sizing.
+2025-06-27 08:31:38,394 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 48 (per class), which is derived from the number of CPUs on this host.
+2025-06-27 08:31:38,396 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-2) WFLYELY01084: KeyStore D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\configuration\application.keystore not found, it will be auto-generated on first use with a self-signed certificate for host localhost
+2025-06-27 08:31:38,452 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0012: Started server default-server.
+2025-06-27 08:31:38,475 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) Queuing requests.
+2025-06-27 08:31:38,483 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting
+2025-06-27 08:31:38,674 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2025-06-27 08:31:38,880 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2025-06-27 08:31:38,919 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-7) WFLYDS0013: Started FileSystemDeploymentService for directory D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\deployments
+2025-06-27 08:31:38,992 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0001: AIO wasn't located on this platform, it will fall back to using pure Java NIO.
+2025-06-27 08:31:39,025 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-06-27 08:31:39,176 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 7.0.0.Final (Apache CXF 4.0.0) 
+2025-06-27 08:31:39,198 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2025-06-27 08:31:39,279 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221000: live Message Broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\journal,bindingsDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\bindings,largeMessagesDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\largemessages,pagingDirectory=D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\server_template\st.cbse.LogisticsCenter.server\target\server\standalone\data\activemq\paging)
+2025-06-27 08:31:39,282 INFO  [org.wildfly.iiop.openjdk] (MSC service thread 1-6) WFLYIIOP0009: CORBA ORB Service started
+2025-06-27 08:31:39,333 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221013: Using NIO Journal
+2025-06-27 08:31:39,513 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE
+2025-06-27 08:31:39,514 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-amqp-protocol]. Adding protocol support for: AMQP
+2025-06-27 08:31:39,515 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-hornetq-protocol]. Adding protocol support for: HORNETQ
+2025-06-27 08:31:39,516 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221043: Protocol module found: [artemis-stomp-protocol]. Adding protocol support for: STOMP
+2025-06-27 08:31:39,622 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221034: Waiting indefinitely to obtain live lock
+2025-06-27 08:31:39,622 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221035: Live Server Obtained live lock
+2025-06-27 08:31:39,794 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.ExpiryQueue on address jms.queue.ExpiryQueue
+2025-06-27 08:31:39,871 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221003: Deploying ANYCAST queue jms.queue.DLQ on address jms.queue.DLQ
+2025-06-27 08:31:39,876 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-1) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+2025-06-27 08:31:39,876 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-8) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor acceptor
+2025-06-27 08:31:39,876 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-7) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+2025-06-27 08:31:39,876 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-3) WFLYMSGAMQ0016: Registered HTTP upgrade for activemq-remoting protocol handled by http-acceptor-throughput acceptor
+2025-06-27 08:31:40,180 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221007: Server is now live
+2025-06-27 08:31:40,181 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 82) AMQ221001: Apache ActiveMQ Artemis Message Broker version 2.31.2 [default, nodeID=61bf6fc6-5320-11f0-bf44-00155df6cbbb] 
+2025-06-27 08:31:40,194 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 82) WFLYMSGAMQ0002: Bound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2025-06-27 08:31:40,211 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 83) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
+2025-06-27 08:31:40,254 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-6) WFLYJCA0007: Registered connection factory java:/JmsXA
+2025-06-27 08:31:40,311 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (MSC service thread 1-6) AMQ151007: Resource adaptor started
+2025-06-27 08:31:40,311 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-6) IJ020002: Deployed: file://RaActivatoractivemq-ra
+2025-06-27 08:31:40,314 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-6) WFLYJCA0002: Bound Jakarta Connectors ConnectionFactory [java:/JmsXA]
+2025-06-27 08:31:40,314 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-7) WFLYJCA0118: Binding connection factory named java:/JmsXA to alias java:jboss/DefaultJMSConnectionFactory
+2025-06-27 08:31:40,475 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2025-06-27 08:31:40,481 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2025-06-27 08:31:40,482 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2025-06-27 08:31:40,483 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 30.0.1.Final (WildFly Core 22.0.2.Final) started in 6268ms - Started 318 of 560 services (332 services are lazy, passive or on-demand) - Server configuration file in use: standalone-full.xml
+2025-06-27 08:31:40,683 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: Starting deployment of "st.cbse.LogisticsCenter.server.war" (runtime-name: "st.cbse.LogisticsCenter.server.war")
+2025-06-27 08:31:41,116 INFO  [org.jboss.as.jpa] (MSC service thread 1-7) WFLYJPA0002: Read persistence.xml for JPAUnit
+2025-06-27 08:31:41,216 INFO  [org.jipijapa] (MSC service thread 1-4) JIPIORMV6020260: Second level cache enabled for st.cbse.LogisticsCenter.server#JPAUnit
+2025-06-27 08:31:41,571 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Processing weld deployment st.cbse.LogisticsCenter.server.war
+2025-06-27 08:31:41,731 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-8) HV000001: Hibernate Validator 8.0.1.Final
+2025-06-27 08:31:41,925 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'BaggageManagementBean' in deployment unit 'deployment "st.cbse.LogisticsCenter.server.war"' are as follows:
 
-	java:global/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.beans.StartAppBean
-	java:app/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.beans.StartAppBean
-	java:module/StartAppBean!st.cbse.logisticscenter.crm.server.start.beans.StartAppBean
+	java:global/st.cbse.LogisticsCenter.server/BaggageManagementBean!st.cbse.logisticscenter.baggagemgmt.server.start.interfaces.IBaggageManagementRemote
+	java:app/st.cbse.LogisticsCenter.server/BaggageManagementBean!st.cbse.logisticscenter.baggagemgmt.server.start.interfaces.IBaggageManagementRemote
+	java:module/BaggageManagementBean!st.cbse.logisticscenter.baggagemgmt.server.start.interfaces.IBaggageManagementRemote
+	java:jboss/exported/st.cbse.LogisticsCenter.server/BaggageManagementBean!st.cbse.logisticscenter.baggagemgmt.server.start.interfaces.IBaggageManagementRemote
+	ejb:/st.cbse.LogisticsCenter.server/BaggageManagementBean!st.cbse.logisticscenter.baggagemgmt.server.start.interfaces.IBaggageManagementRemote
+	java:global/st.cbse.LogisticsCenter.server/BaggageManagementBean
+	java:app/st.cbse.LogisticsCenter.server/BaggageManagementBean
+	java:module/BaggageManagementBean
+
+2025-06-27 08:31:41,926 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'StartAppBean' in deployment unit 'deployment "st.cbse.LogisticsCenter.server.war"' are as follows:
+
 	java:global/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.interfaces.StartAppRemote
 	java:app/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.interfaces.StartAppRemote
 	java:module/StartAppBean!st.cbse.logisticscenter.crm.server.start.interfaces.StartAppRemote
 	java:jboss/exported/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.interfaces.StartAppRemote
 	ejb:/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.interfaces.StartAppRemote
+	java:global/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.beans.StartAppBean
+	java:app/st.cbse.LogisticsCenter.server/StartAppBean!st.cbse.logisticscenter.crm.server.start.beans.StartAppBean
+	java:module/StartAppBean!st.cbse.logisticscenter.crm.server.start.beans.StartAppBean
 
-2025-06-26 05:02:39,013 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'PassengerManagementBean' in deployment unit 'deployment "st.cbse.LogisticsCenter.server.war"' are as follows:
+2025-06-27 08:31:41,927 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'PassengerManagementBean' in deployment unit 'deployment "st.cbse.LogisticsCenter.server.war"' are as follows:
 
-	java:global/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.interfaces.IPassengerManagementRemote
-	java:app/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.interfaces.IPassengerManagementRemote
-	java:module/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.interfaces.IPassengerManagementRemote
-	java:jboss/exported/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.interfaces.IPassengerManagementRemote
-	ejb:/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.interfaces.IPassengerManagementRemote
+	java:global/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.start.interfaces.IPassengerManagementRemote
+	java:app/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.start.interfaces.IPassengerManagementRemote
+	java:module/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.start.interfaces.IPassengerManagementRemote
+	java:jboss/exported/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.start.interfaces.IPassengerManagementRemote
+	ejb:/st.cbse.LogisticsCenter.server/PassengerManagementBean!st.cbse.logisticscenter.passengermgmt.server.start.interfaces.IPassengerManagementRemote
 	java:global/st.cbse.LogisticsCenter.server/PassengerManagementBean
 	java:app/st.cbse.LogisticsCenter.server/PassengerManagementBean
 	java:module/PassengerManagementBean
 
-2025-06-26 05:02:39,014 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-7) WFLYEJB0473: JNDI bindings for session bean named 'FlightManagementBean' in deployment unit 'deployment "st.cbse.LogisticsCenter.server.war"' are as follows:
+2025-06-27 08:31:41,928 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-8) WFLYEJB0473: JNDI bindings for session bean named 'FlightManagementBean' in deployment unit 'deployment "st.cbse.LogisticsCenter.server.war"' are as follows:
 
-	java:global/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote
-	java:app/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote
-	java:module/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote
-	java:jboss/exported/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote
-	ejb:/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote
+	java:global/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.start.interfaces.IFlightManagementRemote
+	java:app/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.start.interfaces.IFlightManagementRemote
+	java:module/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.start.interfaces.IFlightManagementRemote
+	java:jboss/exported/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.start.interfaces.IFlightManagementRemote
+	ejb:/st.cbse.LogisticsCenter.server/FlightManagementBean!st.cbse.logisticscenter.flightmgmt.server.start.interfaces.IFlightManagementRemote
 	java:global/st.cbse.LogisticsCenter.server/FlightManagementBean
 	java:app/st.cbse.LogisticsCenter.server/FlightManagementBean
 	java:module/FlightManagementBean
 
-2025-06-26 05:02:39,350 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 83) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
-2025-06-26 05:02:39,436 INFO  [org.jipijapa] (MSC service thread 1-5) JIPIORMV6020260: Second level cache enabled for st.cbse.LogisticsCenter.server#JPAUnit
-2025-06-26 05:02:39,532 INFO  [org.jboss.weld.Version] (MSC service thread 1-5) WELD-000900: 5.1.2 (Final)
-2025-06-26 05:02:40,086 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 83) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
-2025-06-26 05:02:40,104 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 83) HHH000204: Processing PersistenceUnitInfo [name: JPAUnit]
-2025-06-26 05:02:40,187 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 83) HHH000412: Hibernate ORM core version 6.2.13.Final
-2025-06-26 05:02:40,193 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 83) HHH000406: Using bytecode reflection optimizer
-2025-06-26 05:02:40,475 WARN  [org.hibernate.orm.deprecation] (ServerService Thread Pool -- 83) HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-26 05:02:40,578 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 83) Envers integration enabled? : true
-2025-06-26 05:02:40,764 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 83) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
-2025-06-26 05:02:42,066 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "Airline" cascade 
-2025-06-26 05:02:42,073 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "FLIGHTS" cascade 
-2025-06-26 05:02:42,074 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "Passenger" cascade 
-2025-06-26 05:02:42,083 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "Airline" ("id" bigint generated by default as identity, "contactEmail" varchar(255), "iataCode" varchar(255), "name" varchar(255), primary key ("id"))
-2025-06-26 05:02:42,094 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "FLIGHTS" ("basePrice" float(53) not null, "pricePerBaggage" float(53) not null, "airline_id" bigint not null, "id" bigint generated by default as identity, "startTime" timestamp(6) not null, "destination" varchar(255) not null, "flightNumber" varchar(255) not null unique, "origin" varchar(255) not null, "planeNumber" varchar(255) not null, "planeType" varchar(255) not null, primary key ("id"))
-2025-06-26 05:02:42,099 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "Passenger" ("id" bigint generated by default as identity, "email" varchar(255) not null unique, "firstName" varchar(255) not null, "lastName" varchar(255) not null, "password" varchar(255) not null, "username" varchar(255) not null unique, primary key ("id"))
-2025-06-26 05:02:42,103 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: alter table if exists "FLIGHTS" add constraint "FKlwiwg59vnmgeyhskkrla0k2y1" foreign key ("airline_id") references "Airline"
-2025-06-26 05:02:42,878 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 83) WFLYUT0021: Registered web context: '/st.cbse.LogisticsCenter.server' for server 'default-server'
-2025-06-26 05:02:42,965 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "st.cbse.LogisticsCenter.server.war" (runtime-name : "st.cbse.LogisticsCenter.server.war")
-2025-06-26 05:03:33,978 INFO  [stdout] (default task-1) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."iataCode"=? or a1_0."name"=?
-2025-06-26 05:03:34,071 INFO  [stdout] (default task-1) Hibernate: insert into "Airline" ("contactEmail","iataCode","name","id") values (?,?,?,default)
-2025-06-26 05:03:34,082 INFO  [st.cbse.logisticscenter.flightmgmt.server.start.beans.FlightManagementBean] (default task-1) Airline registered: Luft
-2025-06-26 05:05:13,623 INFO  [stdout] (default task-2) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."iataCode"=?
-2025-06-26 05:05:13,624 INFO  [st.cbse.logisticscenter.flightmgmt.server.start.beans.FlightManagementBean] (default task-2) No airline found with IATA code: 123
-2025-06-26 05:05:18,100 INFO  [stdout] (default task-2) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."iataCode"=?
-2025-06-26 05:05:18,103 INFO  [st.cbse.logisticscenter.flightmgmt.server.start.beans.FlightManagementBean] (default task-2) No airline found with IATA code: 12
-2025-06-26 05:05:26,100 INFO  [stdout] (default task-2) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."iataCode"=?
-2025-06-26 05:05:30,348 INFO  [stdout] (default task-2) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."id"=?
-2025-06-26 05:05:30,375 INFO  [stdout] (default task-2) Hibernate: select f1_0."id",f1_0."airline_id",f1_0."basePrice",f1_0."destination",f1_0."flightNumber",f1_0."origin",f1_0."planeNumber",f1_0."planeType",f1_0."pricePerBaggage",f1_0."startTime" from "FLIGHTS" f1_0 where f1_0."airline_id"=? order by f1_0."startTime" desc
-2025-06-26 05:06:22,387 INFO  [stdout] (default task-2) Hibernate: select f1_0."id",f1_0."airline_id",f1_0."basePrice",f1_0."destination",f1_0."flightNumber",f1_0."origin",f1_0."planeNumber",f1_0."planeType",f1_0."pricePerBaggage",f1_0."startTime" from "FLIGHTS" f1_0 where f1_0."flightNumber"=?
-2025-06-26 05:06:22,390 INFO  [stdout] (default task-2) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."id"=?
-2025-06-26 05:06:22,406 INFO  [stdout] (default task-2) Hibernate: insert into "FLIGHTS" ("airline_id","basePrice","destination","flightNumber","origin","planeNumber","planeType","pricePerBaggage","startTime","id") values (?,?,?,?,?,?,?,?,?,default)
-2025-06-26 05:06:22,410 INFO  [st.cbse.logisticscenter.flightmgmt.server.start.beans.FlightManagementBean] (default task-2) Flight 1 added for airline Luft.
-2025-06-26 05:06:28,047 INFO  [stdout] (default task-2) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."id"=?
-2025-06-26 05:06:28,050 INFO  [stdout] (default task-2) Hibernate: select f1_0."id",f1_0."airline_id",f1_0."basePrice",f1_0."destination",f1_0."flightNumber",f1_0."origin",f1_0."planeNumber",f1_0."planeType",f1_0."pricePerBaggage",f1_0."startTime" from "FLIGHTS" f1_0 where f1_0."airline_id"=? order by f1_0."startTime" desc
-2025-06-26 05:07:09,975 INFO  [stdout] (default task-2) Hibernate: select p1_0."id",p1_0."email",p1_0."firstName",p1_0."lastName",p1_0."password",p1_0."username" from "Passenger" p1_0 where p1_0."username"=? or p1_0."email"=?
-2025-06-26 05:07:09,992 INFO  [stdout] (default task-2) Hibernate: insert into "Passenger" ("email","firstName","lastName","password","username","id") values (?,?,?,?,?,default)
-2025-06-26 05:07:09,996 INFO  [st.cbse.logisticscenter.passengermgmt.server.start.beans.PassengerManagementBean] (default task-2) Passenger registered: Anqur
-2025-06-26 05:07:13,585 INFO  [stdout] (default task-2) Hibernate: select f1_0."id",f1_0."airline_id",f1_0."basePrice",f1_0."destination",f1_0."flightNumber",f1_0."origin",f1_0."planeNumber",f1_0."planeType",f1_0."pricePerBaggage",f1_0."startTime" from "FLIGHTS" f1_0 order by f1_0."startTime" desc
-2025-06-26 05:07:13,590 INFO  [stdout] (default task-2) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."id"=?
-2025-06-26 05:07:50,375 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0272: Suspending server
-2025-06-26 05:07:50,377 INFO  [org.jboss.as.ejb3] (Thread-1) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
-2025-06-26 05:07:50,381 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0220: Server shutdown has been requested via an OS signal
-2025-06-26 05:07:50,400 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
-2025-06-26 05:07:50,402 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-8) WFLYMSGAMQ0006: Unbound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
-2025-06-26 05:07:50,407 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 89) WFLYUT0022: Unregistered web context: '/st.cbse.LogisticsCenter.server' from server 'default-server'
-2025-06-26 05:07:50,422 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0019: Host default-host stopping
-2025-06-26 05:07:50,428 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-5) WFLYJCA0119: Unbinding connection factory named java:/JmsXA to alias java:jboss/DefaultJMSConnectionFactory
-2025-06-26 05:07:50,428 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0011: Unbound Jakarta Connectors ConnectionFactory [java:/JmsXA]
-2025-06-26 05:07:50,430 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 92) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
-2025-06-26 05:07:50,434 INFO  [stdout] (ServerService Thread Pool -- 92) Hibernate: drop table if exists "Airline" cascade 
-2025-06-26 05:07:50,438 INFO  [stdout] (ServerService Thread Pool -- 92) Hibernate: drop table if exists "FLIGHTS" cascade 
-2025-06-26 05:07:50,442 INFO  [stdout] (ServerService Thread Pool -- 92) Hibernate: drop table if exists "Passenger" cascade 
-2025-06-26 05:07:50,449 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 92) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@6d55e1e0
-2025-06-26 05:07:50,454 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 92) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
-2025-06-26 05:07:50,458 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
-2025-06-26 05:07:50,463 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (ServerService Thread Pool -- 93) AMQ151003: resource adaptor stopped
-2025-06-26 05:07:50,464 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0019: Stopped Driver service with driver-name = h2
-2025-06-26 05:07:50,482 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0028: Stopped deployment st.cbse.LogisticsCenter.server.war (runtime-name: st.cbse.LogisticsCenter.server.war) in 87ms
-2025-06-26 05:07:50,483 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0008: Undertow HTTPS listener https suspending
-2025-06-26 05:07:50,484 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
-2025-06-26 05:07:50,617 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 93) AMQ221002: Apache ActiveMQ Artemis Message Broker version 2.31.2 [032a74c8-523a-11f0-9829-00155df6cbbb] stopped, uptime 5 minutes
-2025-06-26 05:07:50,618 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0008: Undertow HTTP listener default suspending
-2025-06-26 05:07:50,618 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
-2025-06-26 05:07:50,619 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0004: Undertow 2.3.10.Final stopping
-2025-06-26 05:07:50,625 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0050: WildFly Full 30.0.1.Final (WildFly Core 22.0.2.Final) stopped in 237ms
+2025-06-27 08:31:42,212 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 83) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2025-06-27 08:31:42,288 INFO  [org.jipijapa] (MSC service thread 1-4) JIPIORMV6020260: Second level cache enabled for st.cbse.LogisticsCenter.server#JPAUnit
+2025-06-27 08:31:42,370 INFO  [org.jboss.weld.Version] (MSC service thread 1-4) WELD-000900: 5.1.2 (Final)
+2025-06-27 08:31:42,927 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 83) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
+2025-06-27 08:31:42,945 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 83) HHH000204: Processing PersistenceUnitInfo [name: JPAUnit]
+2025-06-27 08:31:43,040 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 83) HHH000412: Hibernate ORM core version 6.2.13.Final
+2025-06-27 08:31:43,045 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 83) HHH000406: Using bytecode reflection optimizer
+2025-06-27 08:31:43,357 WARN  [org.hibernate.orm.deprecation] (ServerService Thread Pool -- 83) HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-27 08:31:43,459 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 83) Envers integration enabled? : true
+2025-06-27 08:31:43,654 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 83) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
+2025-06-27 08:31:45,114 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "Airline" cascade 
+2025-06-27 08:31:45,120 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "BAGGAGE" cascade 
+2025-06-27 08:31:45,121 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "BAGGAGE_HISTORY" cascade 
+2025-06-27 08:31:45,121 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "FLIGHTS" cascade 
+2025-06-27 08:31:45,122 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: drop table if exists "Passenger" cascade 
+2025-06-27 08:31:45,127 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "Airline" ("id" bigint generated by default as identity, "contactEmail" varchar(255), "iataCode" varchar(255), "name" varchar(255), primary key ("id"))
+2025-06-27 08:31:45,138 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "BAGGAGE" ("heldForInspection" boolean not null, "weightKg" float(53) not null, "flight_id" bigint not null, "id" bigint generated by default as identity, "baggageNumber" varchar(255) not null unique, "status" varchar(255) not null check ("status" in ('DROPPED_OFF','SECURITY_CLEARED','SORTED','CBR_READY','LOADED','TRANSIT','ARRIVED','DELIVERED','LOST','DAMAGED','MISROUTED','HELD_FOR_INSPECTION')), primary key ("id"))
+2025-06-27 08:31:45,147 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "BAGGAGE_HISTORY" ("baggage_id" bigint not null, "id" bigint generated by default as identity, "timestamp" timestamp(6) not null, "details" varchar(255), "status" varchar(255) not null check ("status" in ('DROPPED_OFF','SECURITY_CLEARED','SORTED','CBR_READY','LOADED','TRANSIT','ARRIVED','DELIVERED','LOST','DAMAGED','MISROUTED','HELD_FOR_INSPECTION')), primary key ("id"))
+2025-06-27 08:31:45,150 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "FLIGHTS" ("basePrice" float(53) not null, "capacity" integer not null, "currentPassengers" integer not null, "pricePerBaggage" float(53) not null, "airline_id" bigint not null, "id" bigint generated by default as identity, "startTime" timestamp(6) not null, "destination" varchar(255) not null, "flightNumber" varchar(255) not null unique, "origin" varchar(255) not null, "planeNumber" varchar(255) not null, "planeType" varchar(255) not null, primary key ("id"))
+2025-06-27 08:31:45,152 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: create table "Passenger" ("id" bigint generated by default as identity, "email" varchar(255) not null unique, "firstName" varchar(255) not null, "lastName" varchar(255) not null, "password" varchar(255) not null, "username" varchar(255) not null unique, primary key ("id"))
+2025-06-27 08:31:45,155 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: alter table if exists "BAGGAGE" add constraint "FK9il4s8197s1y2ouj6qqn9mll7" foreign key ("flight_id") references "FLIGHTS"
+2025-06-27 08:31:45,165 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: alter table if exists "BAGGAGE_HISTORY" add constraint "FKf31xm91vmcas61m28udnsicm1" foreign key ("baggage_id") references "BAGGAGE"
+2025-06-27 08:31:45,168 INFO  [stdout] (ServerService Thread Pool -- 83) Hibernate: alter table if exists "FLIGHTS" add constraint "FKlwiwg59vnmgeyhskkrla0k2y1" foreign key ("airline_id") references "Airline"
+2025-06-27 08:31:45,888 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 33) WFLYUT0021: Registered web context: '/st.cbse.LogisticsCenter.server' for server 'default-server'
+2025-06-27 08:31:45,966 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0010: Deployed "st.cbse.LogisticsCenter.server.war" (runtime-name : "st.cbse.LogisticsCenter.server.war")
+2025-06-27 08:36:34,990 INFO  [stdout] (default task-1) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."iataCode"=? or a1_0."name"=?
+2025-06-27 08:36:35,073 INFO  [stdout] (default task-1) Hibernate: insert into "Airline" ("contactEmail","iataCode","name","id") values (?,?,?,default)
+2025-06-27 08:36:35,085 INFO  [st.cbse.logisticscenter.flightmgmt.server.start.beans.FlightManagementBean] (default task-1) Airline registered: Qatar Airways
+2025-06-27 08:37:22,005 INFO  [stdout] (default task-1) Hibernate: select f1_0."id",f1_0."airline_id",f1_0."basePrice",f1_0."capacity",f1_0."currentPassengers",f1_0."destination",f1_0."flightNumber",f1_0."origin",f1_0."planeNumber",f1_0."planeType",f1_0."pricePerBaggage",f1_0."startTime" from "FLIGHTS" f1_0 where f1_0."flightNumber"=?
+2025-06-27 08:37:22,017 INFO  [stdout] (default task-1) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."id"=?
+2025-06-27 08:37:22,039 INFO  [stdout] (default task-1) Hibernate: insert into "FLIGHTS" ("airline_id","basePrice","capacity","currentPassengers","destination","flightNumber","origin","planeNumber","planeType","pricePerBaggage","startTime","id") values (?,?,?,?,?,?,?,?,?,?,?,default)
+2025-06-27 08:37:22,043 INFO  [st.cbse.logisticscenter.flightmgmt.server.start.beans.FlightManagementBean] (default task-1) Flight 123 added for airline Qatar Airways.
+2025-06-27 08:38:25,849 INFO  [org.jboss.ejb.client] (default task-1) JBoss EJB Client version 5.0.5.Final
+2025-06-27 08:38:25,865 INFO  [stdout] (default task-1) Hibernate: select p1_0."id",p1_0."email",p1_0."firstName",p1_0."lastName",p1_0."password",p1_0."username" from "Passenger" p1_0 where p1_0."username"=? or p1_0."email"=?
+2025-06-27 08:38:25,872 INFO  [stdout] (default task-1) Hibernate: insert into "Passenger" ("email","firstName","lastName","password","username","id") values (?,?,?,?,?,default)
+2025-06-27 08:38:25,874 INFO  [st.cbse.logisticscenter.passengermgmt.server.start.beans.PassengerManagementBean] (default task-1) Passenger registered: Anqur
+2025-06-27 08:38:33,004 INFO  [stdout] (default task-1) Hibernate: select f1_0."id",f1_0."airline_id",f1_0."basePrice",f1_0."capacity",f1_0."currentPassengers",f1_0."destination",f1_0."flightNumber",f1_0."origin",f1_0."planeNumber",f1_0."planeType",f1_0."pricePerBaggage",f1_0."startTime" from "FLIGHTS" f1_0 where f1_0."flightNumber"=?
+2025-06-27 08:38:33,009 INFO  [stdout] (default task-1) Hibernate: select a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name" from "Airline" a1_0 where a1_0."id"=?
+2025-06-27 08:38:40,545 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Attempting to drop baggage: bag for flight: 123
+2025-06-27 08:38:40,584 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,586 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) No baggage found with number: bag
+2025-06-27 08:38:40,587 INFO  [stdout] (default task-1) Hibernate: select f1_0."id",f1_0."airline_id",a1_0."id",a1_0."contactEmail",a1_0."iataCode",a1_0."name",f1_0."basePrice",f1_0."capacity",f1_0."currentPassengers",f1_0."destination",f1_0."flightNumber",f1_0."origin",f1_0."planeNumber",f1_0."planeType",f1_0."pricePerBaggage",f1_0."startTime" from "FLIGHTS" f1_0 join "Airline" a1_0 on a1_0."id"=f1_0."airline_id" where f1_0."id"=?
+2025-06-27 08:38:40,606 INFO  [stdout] (default task-1) Hibernate: insert into "BAGGAGE" ("baggageNumber","flight_id","heldForInspection","status","weightKg","id") values (?,?,?,?,?,default)
+2025-06-27 08:38:40,615 INFO  [stdout] (default task-1) Hibernate: insert into "BAGGAGE_HISTORY" ("baggage_id","details","status","timestamp","id") values (?,?,?,?,default)
+2025-06-27 08:38:40,637 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag dropped off and persisted successfully.
+2025-06-27 08:38:40,640 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,644 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,648 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) 
+--- Initiating automated processing for Baggage: bag (Current Status: Dropped Off) ---
+2025-06-27 08:38:40,650 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,651 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: Entering Security Scan...
+2025-06-27 08:38:40,653 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,658 INFO  [stdout] (default task-1) Hibernate: insert into "BAGGAGE_HISTORY" ("baggage_id","details","status","timestamp","id") values (?,?,?,?,default)
+2025-06-27 08:38:40,660 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag status updated to: Security Cleared (Cleared by X-ray scan.)
+2025-06-27 08:38:40,661 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: Security scan DONE. Passing to Sorting.
+2025-06-27 08:38:40,671 INFO  [stdout] (default task-1) Hibernate: update "BAGGAGE" set "baggageNumber"=?,"flight_id"=?,"heldForInspection"=?,"status"=?,"weightKg"=? where "id"=?
+2025-06-27 08:38:40,677 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,679 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: Entering Sorting Facility...
+2025-06-27 08:38:40,681 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,684 INFO  [stdout] (default task-1) Hibernate: insert into "BAGGAGE_HISTORY" ("baggage_id","details","status","timestamp","id") values (?,?,?,?,default)
+2025-06-27 08:38:40,685 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag status updated to: Sorted (Sorted to Gate 123 conveyor.)
+2025-06-27 08:38:40,686 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: Sorting DONE. Passing to CBR.
+2025-06-27 08:38:40,688 INFO  [stdout] (default task-1) Hibernate: update "BAGGAGE" set "baggageNumber"=?,"flight_id"=?,"heldForInspection"=?,"status"=?,"weightKg"=? where "id"=?
+2025-06-27 08:38:40,689 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,691 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: Preparing for CBR...
+2025-06-27 08:38:40,692 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,695 INFO  [stdout] (default task-1) Hibernate: insert into "BAGGAGE_HISTORY" ("baggage_id","details","status","timestamp","id") values (?,?,?,?,default)
+2025-06-27 08:38:40,697 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag status updated to: CBR Ready (Container/Cart/Bag Ready) (Ready for Container/Cart/Bag Loading.)
+2025-06-27 08:38:40,698 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: CBR READY. Passing to Loading.
+2025-06-27 08:38:40,700 INFO  [stdout] (default task-1) Hibernate: update "BAGGAGE" set "baggageNumber"=?,"flight_id"=?,"heldForInspection"=?,"status"=?,"weightKg"=? where "id"=?
+2025-06-27 08:38:40,701 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,704 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: Loading onto flight 123...
+2025-06-27 08:38:40,706 INFO  [stdout] (default task-1) Hibernate: select b1_0."id",b1_0."baggageNumber",b1_0."flight_id",b1_0."heldForInspection",h1_0."baggage_id",h1_0."id",h1_0."details",h1_0."status",h1_0."timestamp",b1_0."status",b1_0."weightKg" from "BAGGAGE" b1_0 left join "BAGGAGE_HISTORY" h1_0 on b1_0."id"=h1_0."baggage_id" where b1_0."baggageNumber"=? order by h1_0."timestamp"
+2025-06-27 08:38:40,708 INFO  [stdout] (default task-1) Hibernate: insert into "BAGGAGE_HISTORY" ("baggage_id","details","status","timestamp","id") values (?,?,?,?,default)
+2025-06-27 08:38:40,709 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag status updated to: Loaded onto Flight (Loaded onto Flight 123)
+2025-06-27 08:38:40,710 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Baggage bag: LOADING DONE. Automated ground processing complete. Awaiting Flight Departure/Arrival events for further status changes.
+2025-06-27 08:38:40,714 INFO  [st.cbse.logisticscenter.baggagemgmt.server.start.beans.BaggageManagementBean] (default task-1) Returning detached Baggage entity bag to client.
+2025-06-27 08:48:49,221 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0272: Suspending server
+2025-06-27 08:48:49,223 INFO  [org.jboss.as.ejb3] (Thread-1) WFLYEJB0493: Jakarta Enterprise Beans subsystem suspension complete
+2025-06-27 08:48:49,226 INFO  [org.jboss.as.server] (Thread-1) WFLYSRV0220: Server shutdown has been requested via an OS signal
+2025-06-27 08:48:49,239 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2025-06-27 08:48:49,239 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-5) WFLYMSGAMQ0006: Unbound messaging object to jndi name java:jboss/exported/jms/RemoteConnectionFactory
+2025-06-27 08:48:49,244 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 88) WFLYUT0022: Unregistered web context: '/st.cbse.LogisticsCenter.server' from server 'default-server'
+2025-06-27 08:48:49,255 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0019: Host default-host stopping
+2025-06-27 08:48:49,262 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-3) WFLYJCA0119: Unbinding connection factory named java:/JmsXA to alias java:jboss/DefaultJMSConnectionFactory
+2025-06-27 08:48:49,262 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0011: Unbound Jakarta Connectors ConnectionFactory [java:/JmsXA]
+2025-06-27 08:48:49,263 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 91) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
+2025-06-27 08:48:49,265 INFO  [stdout] (ServerService Thread Pool -- 91) Hibernate: drop table if exists "Airline" cascade 
+2025-06-27 08:48:49,269 INFO  [stdout] (ServerService Thread Pool -- 91) Hibernate: drop table if exists "BAGGAGE" cascade 
+2025-06-27 08:48:49,271 INFO  [stdout] (ServerService Thread Pool -- 91) Hibernate: drop table if exists "BAGGAGE_HISTORY" cascade 
+2025-06-27 08:48:49,272 INFO  [stdout] (ServerService Thread Pool -- 91) Hibernate: drop table if exists "FLIGHTS" cascade 
+2025-06-27 08:48:49,273 INFO  [stdout] (ServerService Thread Pool -- 91) Hibernate: drop table if exists "Passenger" cascade 
+2025-06-27 08:48:49,278 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 91) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@7556071
+2025-06-27 08:48:49,283 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 91) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'st.cbse.LogisticsCenter.server#JPAUnit'
+2025-06-27 08:48:49,293 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2025-06-27 08:48:49,298 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2025-06-27 08:48:49,315 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0028: Stopped deployment st.cbse.LogisticsCenter.server.war (runtime-name: st.cbse.LogisticsCenter.server.war) in 80ms
+2025-06-27 08:48:49,315 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0008: Undertow HTTPS listener https suspending
+2025-06-27 08:48:49,317 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-8) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2025-06-27 08:48:49,321 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (ServerService Thread Pool -- 89) AMQ151003: resource adaptor stopped
+2025-06-27 08:48:49,519 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 89) AMQ221002: Apache ActiveMQ Artemis Message Broker version 2.31.2 [61bf6fc6-5320-11f0-bf44-00155df6cbbb] stopped, uptime 17 minutes
+2025-06-27 08:48:49,520 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0008: Undertow HTTP listener default suspending
+2025-06-27 08:48:49,521 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2025-06-27 08:48:49,522 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0004: Undertow 2.3.10.Final stopping
+2025-06-27 08:48:49,529 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: WildFly Full 30.0.1.Final (WildFly Core 22.0.2.Final) stopped in 298ms

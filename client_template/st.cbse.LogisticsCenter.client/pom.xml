@@ -1,75 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>st.cbse</groupId>
     <artifactId>LogisticsCenter.client</artifactId>
     <version>0.1</version>
-    <packaging>jar</packaging>
+    <packaging>jar</packaging> <!-- Specifies that this project will build a JAR file -->
     <name>st.cbse.LogisticsCenter.client</name>
-    
-    
+
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Defines the character encoding for source files -->
+        <maven.compiler.source>21</maven.compiler.source> <!-- Sets the Java source compatibility to Java 21 -->
+        <maven.compiler.target>21</maven.compiler.target> <!-- Sets the Java bytecode target compatibility to Java 21 -->
     </properties>
-    
-    
+
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.jboss/jboss-ejb-client -->
-		<dependency>
-		    <groupId>org.jboss</groupId>
-		    <artifactId>jboss-ejb-client</artifactId>
-		    <version>5.0.6.Final</version>
-		</dependency>
+        <!-- This dependency provides the necessary client-side libraries to connect to WildFly EJBs remotely. -->
+        <dependency>
+            <groupId>org.wildfly</groupId>
+            <artifactId>wildfly-client-all</artifactId>
+            <version>26.1.3.Final</version>
+        </dependency>
 
-		<!-- adding this part extra in the template so that the acquired beans from the server part 
-		can interact between themselves. Meaning now different components can find eachother's data -->
-		<dependency>
-        	<groupId>jakarta.platform</groupId>
-        	<artifactId>jakarta.jakartaee-api</artifactId>
-        	<version>10.0.0</version> <scope>provided</scope>
-    	</dependency>
+        <!-- This dependency provides the Jakarta EE API.
+             It's marked as 'provided' because the application server (WildFly)
+             will provide these APIs at runtime, so they don't need to be bundled in the client JAR. -->
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
+            <scope>provided</scope>
+        </dependency>
 
-		<!-- adding this part extra in the template, making it simpler in the client side and therefore I don't have
-		to have the flightmgmt component written in the client side anymore only in the server side is enough
-		only having calling file like the "Client.java" along with the supporting classes are enough now -->
-		<dependency>
-        	<groupId>st.cbse</groupId>
-        	<artifactId>LogisticsCenter.server</artifactId>
-        	<version>0.1</version>
-			<classifier>interfaces</classifier>
-        	<scope>compile</scope>
-    	</dependency>
+        <!-- This is a crucial dependency on your server project.
+             It pulls in a specially prepared JAR (with 'client' classifier) from your server project
+             that contains all the necessary remote interfaces (e.g., IPassengerManagementRemote,
+             IFlightManagementRemote, IBaggageManagementRemote) and entity/data classes (e.g., Passenger, Flight, Baggage).
+             This allows your client-side managers to compile and work with these shared types. -->
+        <dependency>
+            <groupId>st.cbse</groupId>
+            <artifactId>LogisticsCenter.server</artifactId>
+            <version>0.1</version>
+            <classifier>client</classifier> <!-- CORRECTED: This must match the classifier used by maven-jar-plugin in your server's pom.xml -->
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
-    
+
     <build>
-	    <finalName>${project.name}</finalName>
-	    <plugins>
-	       <plugin>
-			  <groupId>org.apache.maven.plugins</groupId>
-			  <artifactId>maven-shade-plugin</artifactId>
-			  <version>2.3</version>
-			  <executions>
-			     <!-- Run shade goal on package phase -->
-			    <execution>
-				<phase>package</phase>
-				<goals>
-					<goal>shade</goal>
-				</goals>
-				<configuration>
-				  <transformers>
-					<!-- add Main-Class to manifest file -->
-	                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-						<mainClass>st.cbse.logisticscenter.client.Client</mainClass>
-					</transformer>
-				  </transformers>
-				</configuration>
-			      </execution>
-			  </executions>
-			</plugin>
-	    </plugins>
-	</build>
-    
+        <!-- Sets the name of the final executable JAR file that will be produced. -->
+        <finalName>${project.name}</finalName>
+        <plugins>
+            <!-- Maven Compiler Plugin compiles your project's source code using the Java version defined above. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Shade Plugin is used to create an "uber-jar" or "fat-jar".
+                 It packages all your project's code and its dependencies into a single,
+                 self-contained executable JAR file. This simplifies running the client. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.5.2</version> <!-- UPDATED: To a more recent version for better stability and features. -->
+                <executions>
+                    <!-- Configure the plugin to run during the 'package' phase of the Maven build lifecycle. -->
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal> <!-- Execute the 'shade' goal to create the uber-jar. -->
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <!-- This transformer adds the 'Main-Class' entry to the JAR's manifest file.
+                                     This tells the Java Virtual Machine which class contains the main method
+                                     to execute when the JAR is run (e.g., 'java -jar your-client.jar'). -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>st.cbse.logisticscenter.client.Client</mainClass>
+                                </transformer>
+                                <!-- This transformer is important for merging 'META-INF/services' files from dependencies.
+                                     Libraries like JBoss EJB Client often use these files for service discovery.
+                                     Without it, the shaded JAR might fail at runtime due to missing service providers. -->
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                            <!-- Optional: Filters can be used to exclude certain files from being bundled
+                                 into the final shaded JAR. This can reduce JAR size and avoid potential
+                                 issues with duplicate/conflicting files (e.g., signature files). -->
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact> <!-- Apply filter to all artifacts -->
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>   <!-- Exclude signature files -->
+                                        <exclude>META-INF/*.DSA</exclude>  <!-- Exclude signature files -->
+                                        <exclude>META-INF/*.RSA</exclude>  <!-- Exclude signature files -->
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

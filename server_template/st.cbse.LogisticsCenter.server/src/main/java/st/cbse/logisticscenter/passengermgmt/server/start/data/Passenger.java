@@ -1,5 +1,5 @@
 // File: LogisticsCenter.server/src/main/java/st/cbse/logisticscenter/passengermgmt/server/data/Passenger.java
-package st.cbse.logisticscenter.passengermgmt.server.data;
+package st.cbse.logisticscenter.passengermgmt.server.start.data;
 
 import jakarta.persistence.*;
 import java.io.Serializable;

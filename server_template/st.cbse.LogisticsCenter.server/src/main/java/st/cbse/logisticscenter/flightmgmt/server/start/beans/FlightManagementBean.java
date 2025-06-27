@@ -1,12 +1,14 @@
-// File: LogisticsCenter.server/src/main/java/st/cbse/logisticscenter/flightmgmt/server/start/beans/FlightManagementBean.java
 package st.cbse.logisticscenter.flightmgmt.server.start.beans;
 
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import st.cbse.logisticscenter.flightmgmt.server.data.Airline;
-import st.cbse.logisticscenter.flightmgmt.server.data.Flight;
-import st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote;
+import jakarta.persistence.NoResultException; // Import for NoResultException
+import jakarta.persistence.TypedQuery; // Import for TypedQuery
+
+import st.cbse.logisticscenter.flightmgmt.server.start.data.Airline;
+import st.cbse.logisticscenter.flightmgmt.server.start.data.Flight;
+import st.cbse.logisticscenter.flightmgmt.server.start.interfaces.IFlightManagementRemote;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,10 +20,10 @@ public class FlightManagementBean implements IFlightManagementRemote {
 
     private static final Logger LOGGER = Logger.getLogger(FlightManagementBean.class.getName());
 
-    @PersistenceContext(unitName = "JPAUnit")
+    @PersistenceContext(unitName = "JPAUnit") // Keeping as JPAUnit as requested
     private EntityManager em;
 
-    // Existing methods (may need @Override if not already present)
+    // Existing methods
 
     @Override
     public Airline registerAirline(String name, String iataCode, String email) {
@@ -63,13 +65,16 @@ public class FlightManagementBean implements IFlightManagementRemote {
 
     // --- Flight Management Methods ---
 
-    @Override // <--- Ensure @Override is present and the signature matches IFlightManagementRemote
-    public Flight addFlight(Airline airline, String flightNumber, String origin, String destination, LocalDateTime startTime, double basePrice, double pricePerBaggage, String planeType, String planeNumber) {
+    @Override
+    // --- UPDATED METHOD SIGNATURE AND IMPLEMENTATION ---
+    public Flight addFlight(Airline airline, String flightNumber, String origin, String destination,
+                            LocalDateTime startTime, double basePrice, double pricePerBaggage,
+                            String planeType, String planeNumber, int capacity, int currentPassengers) { // Parameters added
         try {
             // Check if flight number already exists
             List<Flight> existingFlights = em.createQuery("SELECT f FROM Flight f WHERE f.flightNumber = :flightNumber", Flight.class)
-                                            .setParameter("flightNumber", flightNumber)
-                                            .getResultList();
+                                             .setParameter("flightNumber", flightNumber)
+                                             .getResultList();
             if (!existingFlights.isEmpty()) {
                 LOGGER.log(Level.WARNING, "Failed to add flight: Flight number {0} already exists.", flightNumber);
                 return null;
@@ -83,7 +88,9 @@ public class FlightManagementBean implements IFlightManagementRemote {
             }
 
             // Corrected constructor call to match the updated Flight class
-            Flight flight = new Flight(managedAirline, flightNumber, origin, destination, startTime, basePrice, pricePerBaggage, planeType, planeNumber);
+            Flight flight = new Flight(managedAirline, flightNumber, origin, destination, startTime,
+                                       basePrice, pricePerBaggage, planeType, planeNumber,
+                                       capacity, currentPassengers); // Pass new fields
             em.persist(flight);
             LOGGER.log(Level.INFO, "Flight {0} added for airline {1}.", new Object[]{flightNumber, managedAirline.getName()});
             return flight;
@@ -93,7 +100,7 @@ public class FlightManagementBean implements IFlightManagementRemote {
         }
     }
 
-    @Override // <--- Ensure @Override is present and the signature matches IFlightManagementRemote
+    @Override
     public List<Flight> getFlightsByAirline(Airline airline) {
         try {
             // Ensure the passed airline is a managed entity for the query
@@ -107,18 +114,37 @@ public class FlightManagementBean implements IFlightManagementRemote {
                      .getResultList();
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "Error retrieving flights by airline", e);
+            e.printStackTrace(); // Keep stack trace for debugging
             return new java.util.ArrayList<>();
         }
     }
 
-    @Override // <--- New method implementation!
+    @Override
     public List<Flight> getAllFlights() {
         try {
             return em.createQuery("SELECT f FROM Flight f ORDER BY f.startTime DESC", Flight.class)
                      .getResultList();
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "Error retrieving all flights", e);
+            e.printStackTrace(); // Keep stack trace for debugging
             return new java.util.ArrayList<>();
+        }
+    }
+
+    // --- NEW METHOD IMPLEMENTATION ---
+    @Override
+    public Flight getFlightByFlightNumber(String flightNumber) {
+        try {
+            TypedQuery<Flight> query = em.createQuery("SELECT f FROM Flight f WHERE f.flightNumber = :flightNumber", Flight.class);
+            query.setParameter("flightNumber", flightNumber);
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            LOGGER.log(Level.INFO, "No flight found with flight number: {0}", flightNumber);
+            return null;
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Error retrieving flight by flight number", e);
+            e.printStackTrace(); // Keep stack trace for debugging
+            return null;
         }
     }
 }

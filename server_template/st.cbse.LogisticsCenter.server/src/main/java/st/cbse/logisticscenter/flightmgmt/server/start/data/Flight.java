@@ -1,5 +1,4 @@
-// File: LogisticsCenter.server/src/main/java/st/cbse/logisticscenter/flightmgmt/server/data/Flight.java
-package st.cbse.logisticscenter.flightmgmt.server.data;
+package st.cbse.logisticscenter.flightmgmt.server.start.data;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
@@ -21,7 +20,6 @@ public class Flight implements Serializable {
     @Column(unique = true, nullable = false)
     private String flightNumber;
 
-    // NEW: Origin and Destination fields
     @Column(nullable = false)
     private String origin;
 
@@ -43,11 +41,23 @@ public class Flight implements Serializable {
     @Column(nullable = false)
     private String planeNumber;
 
+    // --- NEW FIELDS ADDED ---
+    @Column(nullable = false) // Assuming capacity is always required
+    private int capacity; // Total passenger capacity of the plane for this flight
+
+    @Column(nullable = false) // Assuming current passengers is always present (even if 0)
+    private int currentPassengers; // Current number of passengers booked on this flight
+    // --- END NEW FIELDS ---
+
+
     // Default constructor for JPA
     public Flight() {
     }
 
-    public Flight(Airline airline, String flightNumber, String origin, String destination, LocalDateTime startTime, double basePrice, double pricePerBaggage, String planeType, String planeNumber) {
+    // --- UPDATED CONSTRUCTOR ---
+    public Flight(Airline airline, String flightNumber, String origin, String destination,
+                  LocalDateTime startTime, double basePrice, double pricePerBaggage,
+                  String planeType, String planeNumber, int capacity, int currentPassengers) {
         this.airline = airline;
         this.flightNumber = flightNumber;
         this.origin = origin;
@@ -57,6 +67,8 @@ public class Flight implements Serializable {
         this.pricePerBaggage = pricePerBaggage;
         this.planeType = planeType;
         this.planeNumber = planeNumber;
+        this.capacity = capacity;              // Initialize new field
+        this.currentPassengers = currentPassengers; // Initialize new field
     }
 
     // Getters and Setters
@@ -85,7 +97,6 @@ public class Flight implements Serializable {
         this.flightNumber = flightNumber;
     }
 
-    // NEW: Getters and setters for origin and destination
     public String getOrigin() {
         return origin;
     }
@@ -142,6 +153,24 @@ public class Flight implements Serializable {
         this.planeNumber = planeNumber;
     }
 
+    // --- NEW GETTERS AND SETTERS ADDED ---
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getCurrentPassengers() {
+        return currentPassengers;
+    }
+
+    public void setCurrentPassengers(int currentPassengers) {
+        this.currentPassengers = currentPassengers;
+    }
+    // --- END NEW GETTERS AND SETTERS ---
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -168,6 +197,8 @@ public class Flight implements Serializable {
                ", pricePerBaggage=" + pricePerBaggage +
                ", planeType='" + planeType + '\'' +
                ", planeNumber='" + planeNumber + '\'' +
+               ", capacity=" + capacity +               // Include in toString
+               ", currentPassengers=" + currentPassengers + // Include in toString
                '}';
     }
 }

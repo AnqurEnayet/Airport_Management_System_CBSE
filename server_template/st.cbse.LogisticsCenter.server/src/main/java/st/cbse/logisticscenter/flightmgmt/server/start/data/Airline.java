@@ -1,4 +1,4 @@
-package st.cbse.logisticscenter.flightmgmt.server.data;
+package st.cbse.logisticscenter.flightmgmt.server.start.data;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,8 +1,10 @@
-// File: LogisticsCenter.server/src/main/java/st/cbse/logisticscenter/passengermgmt/server/interfaces/IPassengerManagementRemote.java
-package st.cbse.logisticscenter.passengermgmt.server.interfaces;
+// File: LogisticsCenter.server/src/main/java/st/cbse/logisticscenter/passengermgmt/server/start/interfaces/IPassengerManagementRemote.java
+package st.cbse.logisticscenter.passengermgmt.server.start.interfaces;
 
 import jakarta.ejb.Remote;
-import st.cbse.logisticscenter.passengermgmt.server.data.Passenger;
+import st.cbse.logisticscenter.passengermgmt.server.start.data.Passenger;
+// NEW IMPORT: Required because dropBaggageForPassenger uses the Flight object
+import st.cbse.logisticscenter.flightmgmt.server.start.data.Flight;
 
 @Remote
 public interface IPassengerManagementRemote {
@@ -33,5 +35,18 @@ public interface IPassengerManagementRemote {
      * @param username The username of the passenger to retrieve.
      * @return The Passenger object if found, null otherwise.
      */
-    Passenger getPassengerByUsername(String username); // <--- NEW METHOD DECLARATION
+    Passenger getPassengerByUsername(String username); // <--- Existing Method
+
+    // --- NEW METHOD DECLARATION FOR BAGGAGE DROP-OFF ---
+    /**
+     * Allows a passenger to drop off a piece of baggage for a specific flight.
+     * This method initiates the baggage processing workflow within the system.
+     *
+     * @param passenger The Passenger entity who is dropping off the bag.
+     * @param baggageNumber A unique identifier for the baggage item (e.g., tag number).
+     * @param weightKg The weight of the baggage in kilograms.
+     * @param flight The Flight entity this baggage is associated with.
+     * @return true if the baggage was successfully dropped off and processing started; false otherwise.
+     */
+    boolean dropBaggageForPassenger(Passenger passenger, String baggageNumber, double weightKg, Flight flight);
 }

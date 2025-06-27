@@ -1,9 +1,8 @@
-// File: D:\This PC\Projects\1. DSE\CBSE\CBSE_Project_3\client_template\st.cbse.LogisticsCenter.client\src\main\java\st\cbse\logisticscenter\flightmgmt\client\FlightManagementClientManager.java
 package st.cbse.logisticscenter.flightmgmt.client;
 
-import st.cbse.logisticscenter.flightmgmt.server.data.Airline;
-import st.cbse.logisticscenter.flightmgmt.server.data.Flight;
-import st.cbse.logisticscenter.flightmgmt.server.interfaces.IFlightManagementRemote;
+import st.cbse.logisticscenter.flightmgmt.server.start.data.Airline;
+import st.cbse.logisticscenter.flightmgmt.server.start.data.Flight;
+import st.cbse.logisticscenter.flightmgmt.server.start.interfaces.IFlightManagementRemote;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
@@ -27,31 +26,53 @@ public class FlightManagementClientManager {
 
     public Airline registerAirline(String name, String iataCode, String email) {
         try {
-            System.out.println("   Registering new airline: " + name + " (" + iataCode + ")");
+            System.out.println("   Registering new airline: " + name + " (" + iataCode + ")");
             return flightManagementRemote.registerAirline(name, iataCode, email);
         } catch (Exception e) {
             System.err.println("Error registering airline: " + e.getMessage());
+            e.printStackTrace(); // Added for debugging
             return null;
         }
     }
 
     public Airline getAirlineByIataCode(String iataCode) {
         try {
-            System.out.println("   Searching for airline with IATA code: " + iataCode);
+            System.out.println("   Searching for airline with IATA code: " + iataCode);
             return flightManagementRemote.getAirlineByIataCode(iataCode);
         } catch (Exception e) {
             System.err.println("Error retrieving airline by IATA code: " + e.getMessage());
+            e.printStackTrace(); // Added for debugging
             return null;
         }
     }
 
-    // NEW METHOD: Added for passenger management to view all flights
+    // --- NEW METHOD ADDED ---
+    /**
+     * Retrieves a specific flight by its flight number from the remote EJB.
+     * This method is needed by other client managers (like BaggageManagementClientManager)
+     * to get detailed flight information.
+     * @param flightNumber The unique flight number.
+     * @return The Flight object if found, null otherwise.
+     */
+    public Flight getFlightByFlightNumber(String flightNumber) {
+        try {
+            System.out.println("   Searching for flight with number: " + flightNumber);
+            return flightManagementRemote.getFlightByFlightNumber(flightNumber);
+        } catch (Exception e) {
+            System.err.println("Error retrieving flight by flight number: " + e.getMessage());
+            e.printStackTrace(); // Added for debugging
+            return null;
+        }
+    }
+    // --- END NEW METHOD ---
+
     public List<Flight> getAllFlights() {
         try {
             System.out.println("Retrieving all flights...");
             return flightManagementRemote.getAllFlights();
         } catch (Exception e) {
             System.err.println("Error retrieving all flights: " + e.getMessage());
+            e.printStackTrace(); // Added for debugging
             return new java.util.ArrayList<>(); // Return empty list on error
         }
     }
@@ -119,15 +140,29 @@ public class FlightManagementClientManager {
         System.out.print("Enter Plane Number: ");
         String planeNumber = scanner.nextLine();
 
+        // --- NEW: Collect capacity and initialize currentPassengers ---
+        System.out.print("Enter Plane Capacity (e.g., 180): ");
+        int capacity = Integer.parseInt(scanner.nextLine());
+
+        // For a new flight, current passengers should typically start at 0
+        int currentPassengers = 0;
+        // --- END NEW INPUT ---
+
         try {
-            Flight newFlight = flightManagementRemote.addFlight(airline, flightNumber, origin, destination, startTime, basePrice, pricePerBaggage, planeType, planeNumber);
+            // --- UPDATED addFlight METHOD CALL ---
+            Flight newFlight = flightManagementRemote.addFlight(airline, flightNumber, origin, destination,
+                                                                startTime, basePrice, pricePerBaggage,
+                                                                planeType, planeNumber, capacity, currentPassengers);
+            // --- END UPDATED CALL ---
             if (newFlight != null) {
                 System.out.println("Flight " + newFlight.getFlightNumber() + " added successfully!");
+                System.out.println("Details: Capacity=" + newFlight.getCapacity() + ", Current Passengers=" + newFlight.getCurrentPassengers());
             } else {
                 System.out.println("Failed to add flight. Flight number might already exist or there was an error.");
             }
         } catch (Exception e) {
             System.err.println("Error adding flight: " + e.getMessage());
+            e.printStackTrace(); // Added for debugging
         }
     }
 
@@ -142,10 +177,13 @@ public class FlightManagementClientManager {
                     System.out.println(" - Flight " + flight.getFlightNumber() + ": " + flight.getOrigin() + " -> " + flight.getDestination() +
                             " at " + flight.getStartTime().format(java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) +
                             " (ID: " + flight.getId() + ")");
+                    // Now that Flight has these, you can display them here too
+                    System.out.println("   Capacity: " + flight.getCapacity() + ", Current Passengers: " + flight.getCurrentPassengers());
                 });
             }
         } catch (Exception e) {
             System.err.println("Error retrieving flights for airline: " + e.getMessage());
+            e.printStackTrace(); // Added for debugging
         }
     }
 }
