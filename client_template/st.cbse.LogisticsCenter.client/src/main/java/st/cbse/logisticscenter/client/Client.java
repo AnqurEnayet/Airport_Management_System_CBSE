@@ -217,16 +217,18 @@ public class Client {
     // --- NEW METHOD: handleAdministratorRole ---
     private static void handleAdministratorRole() {
         System.out.println("\n--- Administrator Role Access ---");
-        System.out.println("1. Hold/Release Baggage for Inspection");
-        System.out.println("2. Back to Main Menu");
-        System.out.print("Select an option (1-2): ");
+        System.out.println("1. Business Management Manager");
+        System.out.println("2. Baggage Manager");
+
+        System.out.println("3. Back to Main Menu");
+        System.out.print("Select an option (1-3): ");
         String choice = scanner.nextLine();
 
         switch (choice) {
             case "1":
                 adminHoldReleaseBaggage(); // Call the admin function
                 break;
-            case "2":
+            case "3":
                 return; // Go back to main menu
             default:
                 System.out.println("Invalid choice. Please try again.");

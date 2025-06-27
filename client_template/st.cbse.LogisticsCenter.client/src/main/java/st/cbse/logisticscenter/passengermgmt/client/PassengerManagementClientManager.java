@@ -67,10 +67,10 @@ public class PassengerManagementClientManager {
         while (loggedInMenu) {
             System.out.println("\n--- Welcome, " + currentPassenger.getFirstName() + " " + currentPassenger.getLastName() + " (Passenger ID: " + currentPassenger.getId() + ") ---");
             System.out.println("1. View All Available Flights");
-            System.out.println("2. Book a Flight (Under Development)");
+            System.out.println("2. Book a Flight");
             System.out.println("3. Drop Baggage");
             System.out.println("4. Check Baggage Status"); // <--- NEW OPTION
-            System.out.println("5. View My Booking History (Under Development)");
+            System.out.println("5. View My Booking History");
             System.out.println("6. Logout (Return to Main Menu)"); // <--- Adjusted option number
             System.out.print("Select an option (1-6): "); // <--- Adjusted option range
 

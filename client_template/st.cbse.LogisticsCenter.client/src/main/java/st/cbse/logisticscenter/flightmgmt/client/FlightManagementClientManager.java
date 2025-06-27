@@ -83,8 +83,10 @@ public class FlightManagementClientManager {
         while (running) {
             System.out.println("1. Add New Flight");
             System.out.println("2. View My Flights");
-            System.out.println("3. Back to Main Menu");
-            System.out.print("Select an option (1-3): ");
+            System.out.println("3. Delete Flight");
+            System.out.println("4. Update Flight");
+            System.out.println("5. Back to Main Menu");
+            System.out.print("Select an option (1-5): ");
 
             String choice = scanner.nextLine();
 
@@ -96,10 +98,16 @@ public class FlightManagementClientManager {
                     viewAirlineFlights(currentAirline);
                     break;
                 case "3":
-                    running = false;
+                    System.out.println("---Under Development---");
                     break;
+                case "4":
+                    System.out.println("---Under Development---");
+                    break;
+                case "5":
+                    running = false;
+                    break;    
                 default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 3.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 5.");
             }
         }
     }
